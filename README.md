@@ -1,12 +1,12 @@
-# Ubuntu-Setup
+# **Ubuntu-Setup**
 
 ![Shell](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
  Script para realizar instalações e customização do Ubuntu Server e Workstation com versões acima da 20.04.
 
-## Modo de usar
+## **COMO USAR?**
 
->[!IMPORTANTE]\
+>### **IMPORTANTE**
 > Esses scripts são programados apenas para executar 1 vez, caso haja algum erro verifique os arquivos de log em /var/log \
 > Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
 
@@ -15,18 +15,16 @@
 
 2 - Após a conclusão do download, execute o arquivo que estão em /Ubuntu-Setup/**setup-serve.sh** para realizar as instalações e customização do Ubuntu Server e /Ubuntu-Setup/**setup-workstation.sh** para a para realizar as instalações e customização do Ubuntu Desktop.
 
-
-
 &nbsp;
 
-## SERVER
+## **SERVER**
 
 **Instalação**
 
 1. Neofeatch
 2. NMap
 
-## WORKSTATION
+## **WORKSTATION**
 
 **Instalação**
 
