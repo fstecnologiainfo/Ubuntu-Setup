@@ -1,8 +1,9 @@
 # CHANGE  LOG
 
-> Criador: **Fernando da Silva Conceição**
->Data de criação do arquivo: **10/04/2022**
->Ultima Modificação: **16/04/2022**
+Criador: **Fernando da Silva Conceição**\
+Data de criação do arquivo: **10/04/2022**\
+Ultima Modificação: **16/04/2022**
+***
 
 ## 16/04/2022
 
@@ -24,7 +25,7 @@ arquivo: **.gitignore**
 
 arquivo: **README.md**
 
-&nbsp;
+***
 
 ## 10/04/2022
 
@@ -37,7 +38,7 @@ Modificações
 - Personalização do arquivo *\conf\neofetch\config.conf
 - Personalização do Arquivo *\conf\ssh\banner.net
 
-&nbsp;
+***
 
 ## 15/03/2022
 Criação
