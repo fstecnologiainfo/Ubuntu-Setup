@@ -1,0 +1,44 @@
+# CHANGE  LOG
+
+> Criador: **Fernando da Silva Conceição**
+>Data de criação do arquivo: **10/04/2022**
+>Ultima Modificação: **16/04/2022**
+
+## 16/04/2022
+
+Criação
+
+- Adicionando pasta /conf/Grub-Theme e arquivos para implementação do mesmo
+
+Modificações
+
+arquivo: **parametros.sh**
+- Adicionando variáveis Globais para logs, usuário e versionamento do sistema operacional
+
+arquivo: **setup-workstation.sh**
+- Adicionando funções de instalação dos software SNAP e DEB
+- Adicionando funções para cálculos de tempo de execução
+- Adicionando funções para customização do sistema
+
+arquivo: **.gitignore**
+
+arquivo: **README.md**
+
+&nbsp;
+
+## 10/04/2022
+
+Criação
+- Criação do arquivo CHANGELOG para informar alterações no projeto
+- Criação do arquivo parametro.sh, setup-server.sh e setup-workstation.sh
+- Criação da pasta conf para armazenar arquivos de configurações e personalizações dos programas
+
+Modificações
+- Personalização do arquivo *\conf\neofetch\config.conf
+- Personalização do Arquivo *\conf\ssh\banner.net
+
+&nbsp;
+
+## 15/03/2022
+Criação
+- Criação do Projeto e arquivos padrões do GIT
