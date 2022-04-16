@@ -6,11 +6,14 @@
 
 ## Modo de usar
 
-1 - Faça o download dos arquivos com o comando <>
+> Esses scripts são programados apenas para executar 1 vez, caso haja algum erro verifique os arquivos de log em /var/log \
+> Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
 
-2 - Após a conclusão do download do arquivo o arquivo **setup-serve.sh** para realizar as instalações e customização do Ubuntu Server e **setup-workstation.sh** para a para realizar as instalações e customização do Ubuntu Desktop.
+1 - Faça o download do arquivo compactado na página do GitHub ou clone o repositório usando o comando `git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git`
 
-> Esses scripts são programados apenas para executar 1 vez, caso haja algum erro verifique os arquivos de log em /var/log
+2 - Após a conclusão do download, execute o arquivo que estão em /Ubuntu-Setup/**setup-serve.sh** para realizar as instalações e customização do Ubuntu Server e /Ubuntu-Setup/**setup-workstation.sh** para a para realizar as instalações e customização do Ubuntu Desktop.
+
+
 
 &nbsp;
 

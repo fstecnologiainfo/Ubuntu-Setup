@@ -12,3 +12,8 @@ USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
 
 # VARIAVEIS SERVER
+
+# VARIAVEIS WORKSTATION
+SNAP_INSTALL='whatsdesk walc wrapup teams-for-linux pdfmixtool'
+DEB_INSTALL='htop vlc filezilla flatpak git preload curl qbittorrent'
+DEBADM_INSTALL='nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils neofetch speedtest-cli nmap'
