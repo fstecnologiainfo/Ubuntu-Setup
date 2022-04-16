@@ -1,8 +1,9 @@
 # **Ubuntu-Setup**
 
-![Shell](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Shell](https://img.shields.io/badge/Shell%20Script-Linux-red)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
- Script para realizar instalações e customização do Ubuntu Server e Workstation com versões acima da 20.04.
+ Script para realizar instalações e customização do Ubuntu Server e Workstation com versões superior a 20.04.
 
 ## **COMO USAR?**
 
