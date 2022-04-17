@@ -76,34 +76,34 @@ sleep 5
 #============================================================================================
 #? ATUALIZAÇÃO DO SISTEMA
 HORA_UP=$(date +%T)
-echo "Atualizando repositórios....." >> $LOG
+echo -e "Atualizando repositórios....." >> $LOG
 if ! sudo apt-get update &>> $LOG_DETAIL
 then
-    echo "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list" >> $LOG
+    echo -e "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list" >> $LOG
     exit 1
 fi
-echo "Atualização do repositório feita com sucesso!!"  >> $LOG
+echo -e "Atualização do repositório feita com sucesso!!"  >> $LOG
 
-echo "Atualizando pacotes e sistema....."  >> $LOG
+echo -e "Atualizando pacotes e sistema....."  >> $LOG
 if ! sudo apt-get upgrade --autoremove -y &>> $LOG_DETAIL
 then
-    echo "Não foi possível atualizar pacotes."  >> $LOG
+    echo -e "Não foi possível atualizar pacotes."  >> $LOG
     exit 1
 fi
-echo "Atualização de pacotes feita com sucesso!!"  >> $LOG
+echo -e "Atualização de pacotes feita com sucesso!!"  >> $LOG
 clear
 HORA_UPFIM=$(date +%T)
 
 #============================================================================================
 #? INSTALAÇÂO DE SNAPs
 HORA_SNAP=$(date +%T)
-echo "Instalando aplicativos snap....."  >> $LOG
+echo -e "Instalando aplicativos snap....."  >> $LOG
 if ! sudo apt install snap -y &>> $LOG_DETAIL
 then
     echo "Não foi possível instalar o pacote de snap." >> $LOG
     exit 1
 fi
-echo "Instalação do pacote de snap feita com sucesso!!" >> $LOG
+echo -e "Instalação do pacote de snap feita com sucesso!!" >> $LOG
 sudo snap install whatsdesk walc wrapup teams-for-linux &>> $LOG_DETAIL
 sudo snap install pdfmixtool &>> $LOG_DETAIL
 clear
@@ -112,13 +112,13 @@ HORA_SNAPFIM=$(date +%T)
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB
 HORA_DEB=$(date +%T)
-echo "Instalando aplicativos DEB...."  >> $LOG
+echo -e "Instalando aplicativos DEB...."  >> $LOG
 sudo apt install htop vlc filezilla flatpak git preload curl qbittorrent -y &>> $LOG_DETAIL
 clear
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
-echo "Instalando aplicativos DEB administrativos...."  >> $LOG
+echo -e "Instalando aplicativos DEB administrativos...."  >> $LOG
 sudo apt install nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
 sudo apt install neofetch speedtest-cli nmap &>> $LOG_DETAIL
 clear
@@ -126,23 +126,23 @@ HORA_DEBFIM=$(date +%T)
 
 #============================================================================================
 #? CUSTOMIZAÇÃO DO SISTEMA
-echo "Adicionando repositórios extras....."  >> $LOG
+echo -e "Adicionando repositórios extras....."  >> $LOG
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer &>> $LOG_DETAIL
 sudo apt-get update &>> $LOG_DETAIL
-echo "Instalando Grub-Customizer....."  >> $LOG
+echo -e "Instalando Grub-Customizer....."  >> $LOG
 sudo apt-get install grub-customizer -y &>> $LOG_DETAIL
-echo "Iniciando costumização do sistema..." >> $LOG
-echo "Alterando sistema de data e hora em dual-boot" >> $LOG
+echo -e "Iniciando costumização do sistema..." >> $LOG
+echo -e "Alterando sistema de data e hora em dual-boot" >> $LOG
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_DETAIL
-echo "Instalação do Grub Theme...." >> $LOG
+echo -e "Instalação do Grub Theme...." >> $LOG
 cd /conf/Grub-Theme/ &>> $LOG_DETAIL
 if ! sudo bash ./install.sh &>> $LOG_DETAIL
 then
-    echo "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório." >> $LOG
+    echo -e "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório." >> $LOG
     sleep 10
     exit 1
 fi
-echo "Grub Theme instalado com sucesso!" >> $LOG
+echo -e "Grub Theme instalado com sucesso!" >> $LOG
 sleep 3
 HORAFINAL=$(date +%T)
 
