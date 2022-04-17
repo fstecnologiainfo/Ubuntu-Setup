@@ -1,11 +1,12 @@
 # **Ubuntu-Setup**
+
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04.
 
 > ### **IMPORTANTE**
-> Esses scripts são programados apenas para executar 1 vez, caso haja algum erro verifique os arquivos de log em /var/log \
+> Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em /var/log/ \
 > Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
 
 ***
