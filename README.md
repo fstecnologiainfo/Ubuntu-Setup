@@ -29,9 +29,7 @@ git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
 
 ***Instalação***
 
-1. Neofeatch
-
-2. NMap
+Em desenvolvimento
 
 ***
 
@@ -47,7 +45,9 @@ Softwares .DEB (Administrador de Redes): *Nomacs - Synaptic - OpenVPN - Gnome-Bo
 
 ***Customização***
 
-GRUB-Theme (Dual Boot)
+- Ajuste de data e hora para dual boot e VM's
+
+- GRUB-Theme (Dual Boot)
 
 ***
 
