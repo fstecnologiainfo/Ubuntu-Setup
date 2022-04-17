@@ -13,12 +13,12 @@ LOG=$LOGSCRIPT2
 VERSAO="0.2"
 #============================================================================================
 #? VERIFICAÇÕES INICIARIS
-echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG_DETAIL
-echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" >> $LOG
+echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" &>> $LOG_DETAIL
+echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" >> $LOG
 clear
 
 echo -e "Verificando se o usuario e Root e Versao do SO..." >> $LOG
-if [[ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ] -o [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "21.10" ]]
+if [[ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ] || [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "21.10" ]]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
 		echo -e "Distribuição é superior a 20.04, continuando com o script..."

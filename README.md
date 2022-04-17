@@ -19,7 +19,9 @@
 git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
 ```
 
-2 - Após a conclusão do download, execute o arquivo que estão em **/Ubuntu-Setup/setup-serve.sh** para realizar as instalações e customização no Ubuntu Server e **/Ubuntu-Setup/setup-workstation.sh** para a para realizar as instalações e customização no Ubuntu Desktop.
+2 - Acesse a pasta /Ubuntu-Setup e altere as permissões dos arquivos *setup-serve.sh*, *setup-workstation.sh* e *parametros.sh* em arquivos executáveis.
+
+3 - Execute a instalação com os privilégios *root*, sendo **/Ubuntu-Setup/setup-serve.sh** para realizar as instalações e customização no Ubuntu Server e **/Ubuntu-Setup/setup-workstation.sh** para a para realizar as instalações e customização no Ubuntu Desktop.
 
 ***
 
