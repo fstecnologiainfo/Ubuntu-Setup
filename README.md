@@ -2,13 +2,12 @@
 
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/fstecnologiainfo/Ubuntu-Setup?style=plastic">
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04.
 
-> ### **IMPORTANTE**
-> Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em /var/log/ \
-> Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
+>**IMPORTANTE**\
+>Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em /var/log/ \
+>Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
 
 ***
 
@@ -29,6 +28,7 @@ git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
 ***Instalação***
 
 1. Neofeatch
+
 2. NMap
 
 ***
@@ -48,7 +48,9 @@ Softwares .DEB (Administrador de Redes): *Nomacs - Synaptic - OpenVPN - Gnome-Bo
 GRUB-Theme (Dual Boot)
 
 ***
+
 ## **CRÉDITOS**
 
-**Autor**: Fernando da S. Conceição \
+**Autor**: Fernando da S. Conceição
+
 **Contato**: [GMail](fstecnologia.info@gmail.com)
