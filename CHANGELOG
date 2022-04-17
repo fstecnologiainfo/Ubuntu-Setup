@@ -2,7 +2,21 @@
 
 Criador: **Fernando da Silva Conceição**\
 Data de criação do arquivo: **10/04/2022**\
-Ultima Modificação: **16/04/2022**
+Ultima Modificação: **17/04/2022**
+***
+
+## 17/04/2022
+
+Modificações
+
+arquivo: **setup-workstation.sh**
+- Corrigindos mensagens no terminal
+- Ajustando lógica de verificação da versão do sistema operacional
+- Ajustando LOGS
+
+arquivo: **parametros.sh**
+- Alterando saidas de log
+
 ***
 
 ## 16/04/2022

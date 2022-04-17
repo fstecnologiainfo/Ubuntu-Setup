@@ -1,8 +1,8 @@
 #!/bin/bash
 # Desenvolvido: Fernando da Silva Conceição
 # Data de criação do arquivo: 10/04/2022
-# Ultima Modificação: 16/04/2022
-# Versão: 0.1
+# Ultima Modificação: 17/04/2022
+# Versão: 0.2
 #============================================================================================
 
 # IMPORTAÇÃO DOS PARAMETROS e VARIAVEIS GLOBAIS
@@ -10,36 +10,35 @@ source parametros.sh
 HORAINICIAL=$(date +%T)
 LOG_DETAIL=$LOGSCRIPT
 LOG=$LOGSCRIPT2
-VERSAO="0.1"
+VERSAO="0.2"
 #============================================================================================
 #? VERIFICAÇÕES INICIARIS
-echo -e "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG_DETAIL
+echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG_DETAIL
+echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" >> $LOG
 clear
 
-echo -e "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")\n" >> $LOG
-echo -e "Verificando se o usuario e Root e Versao do SO" >> $LOG
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
+echo -e "Verificando se o usuario e Root e Versao do SO..." >> $LOG
+if [[ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ] -o [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "21.10" ]]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
+		echo -e "Distribuição é superior a 20.04, continuando com o script..."
         echo "Passou pela checagem de usuário e versão do sistema operacional." >> $LOG
 		sleep 5
 	else
-		echo -e "Usuário ($USUARIO) não é Root ou a Distribuição não é >= 20.04.x ($UBUNTU)"
+		echo -e "Usuário ($USUARIO) não é Root ou a Distribuição não é superior a 20.04 ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		echo "Não passou pela checagem de usuário e versão do sistema operacional." >> $LOG
         exit 1
 fi
 
-echo -e "Verificando conexão com internet" >> $LOG
+echo -e "Verificando conexão com internet..." >> $LOG
 if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "Você tem acesso a Internet, continuando com o script..." >> $LOG
 		sleep 5
 	else
-		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4" >> $LOG
-		echo -e "e execute novamente este script."
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4 e conexões e execute novamente este script." >> $LOG
 		sleep 5
 		exit 1
 fi
@@ -50,10 +49,12 @@ if [ -f $LOG ]
 		echo -e "É recomendado analisar o arquivo de $LOG e $LOG_DETAIL para informações de falhas ou erros"
 		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
 		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		echo "Passou pela checagem de execução unica." >> $LOG
 		sleep 5
 		exit 1
 	else
 		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		echo "Não passou pela checagem de execução unica." >> $LOG
 		sleep 5
 fi
 echo "Passou pelas verificações iniciais!" &>> $LOG_DETAIL

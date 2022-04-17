@@ -1,13 +1,13 @@
 #!/bin/bash
 # Desenvolvido: Fernando da Silva Conceição
 # Data de criação do arquivo: 10/04/2022
-# Ultima Modificação: 16/04/2022
-# Versão: 0.1
+# Ultima Modificação: 17/04/2022
+# Versão: 0.2
 #============================================================================================
 
 # VARIAVEIS GLOBAIS
-LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
-LOGSCRIPT2="/var/log/SIMPLE-$(echo $0 | cut -d'/' -f2)"
+LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2).log"
+LOGSCRIPT2="/var/log/SIMPLE-$(echo $0 | cut -d'/' -f2).log"
 USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
 
