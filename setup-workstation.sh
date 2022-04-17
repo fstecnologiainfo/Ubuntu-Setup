@@ -13,9 +13,25 @@ LOG=$LOGSCRIPT2
 VERSAO="0.2"
 #============================================================================================
 #? VERIFICAÇÕES INICIARIS
+echo -e "Verificando se o script já foi executado..."
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse computador..."
+		echo -e "É recomendado analisar o arquivo de $LOG e $LOG_DETAIL para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		echo "Nâo passou pela checagem de execução unica." >> $LOG
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		echo "Passou pela checagem de execução unica." >> $LOG
+		sleep 5
+fi
+clear
+
 echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" &>> $LOG_DETAIL
 echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" >> $LOG
-clear
 
 echo -e "Verificando se o usuario e Root..." >> $LOG
 if [ "$USUARIO" == "0" ]
@@ -32,7 +48,7 @@ if [ "$USUARIO" == "0" ]
 fi
 
 echo -e "Verificando compatibilidade com o sistema operacional..." >> $LOG
-if [ "$UBUNTU" == "20.04" ] || [ "$UBUNTU" == "21.10" ]]
+if [ "$UBUNTU" == "20.04" ] || [ "$UBUNTU" == "21.10" ]
 	then
 		echo -e "A versão do sistema operacional é superior a 20.04, continuando com o script..."
 		echo "Passou pela checagem de versão do sistema operacional." >> $LOG
@@ -54,20 +70,6 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 
-if [ -f $LOG ]
-	then
-		echo -e "Script $0 já foi executado 1 (uma) vez nesse computador..."
-		echo -e "É recomendado analisar o arquivo de $LOG e $LOG_DETAIL para informações de falhas ou erros"
-		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
-		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
-		echo "Passou pela checagem de execução unica." >> $LOG
-		sleep 5
-		exit 1
-	else
-		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
-		echo "Não passou pela checagem de execução unica." >> $LOG
-		sleep 5
-fi
 echo "Passou pelas verificações iniciais!" &>> $LOG_DETAIL
 sleep 5
 
