@@ -17,19 +17,30 @@ echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" &>
 echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" >> $LOG
 clear
 
-echo -e "Verificando se o usuario e Root e Versao do SO..." >> $LOG
-if [[ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ] || [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "21.10" ]]
+echo -e "Verificando se o usuario e Root..." >> $LOG
+if [ "$USUARIO" == "0" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é superior a 20.04, continuando com o script..."
-        echo "Passou pela checagem de usuário e versão do sistema operacional." >> $LOG
+        echo "Passou pela checagem de usuário." >> $LOG
 		sleep 5
 	else
-		echo -e "Usuário ($USUARIO) não é Root ou a Distribuição não é superior a 20.04 ($UBUNTU)"
-		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
+		echo -e "Usuário ($USUARIO) não é Root"
+		echo -e "Caso você não tenha executado o script com o comando: sudo"
 		echo -e "Execute novamente o script para verificar o ambiente."
-		echo "Não passou pela checagem de usuário e versão do sistema operacional." >> $LOG
+		echo "Não passou pela checagem de usuário root." >> $LOG
         exit 1
+fi
+
+echo -e "Verificando compatibilidade com o sistema operacional..." >> $LOG
+if [ "$UBUNTU" == "20.04" ] || [ "$UBUNTU" == "21.10" ]]
+	then
+		echo -e "A versão do sistema operacional é superior a 20.04, continuando com o script..."
+		echo "Passou pela checagem de versão do sistema operacional." >> $LOG
+		sleep 5
+	else
+		echo -e "O sistema operacional não é compativel com o script."
+		echo "Não passou pela checagem do sistema operacional." >> $LOG
+		exit 1
 fi
 
 echo -e "Verificando conexão com internet..." >> $LOG

@@ -18,7 +18,7 @@ UBUNTU=$(lsb_release -rs)
 SNAP_RESP='SIM'
 DEB_RESP='SIM'
 DEBADM_RESP='SIM'
-CUSTOM_RESP="SIM"
+CUSTOM_RESP='SIM'
 
 SNAP_INSTALL='whatsdesk walc wrapup teams-for-linux pdfmixtool'
 DEB_INSTALL='htop vlc filezilla flatpak git preload curl qbittorrent nano'
