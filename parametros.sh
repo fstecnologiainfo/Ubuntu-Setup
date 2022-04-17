@@ -13,7 +13,13 @@ UBUNTU=$(lsb_release -rs)
 
 # VARIAVEIS SERVER
 
-# VARIAVEIS WORKSTATION
+#?VARIAVEIS WORKSTATION
+# As respostas devem ser SIM ou NAO
+SNAP_RESP='SIM'
+DEB_RESP='SIM'
+DEBADM_RESP='SIM'
+CUSTOM_RESP="SIM"
+
 SNAP_INSTALL='whatsdesk walc wrapup teams-for-linux pdfmixtool'
-DEB_INSTALL='htop vlc filezilla flatpak git preload curl qbittorrent'
+DEB_INSTALL='htop vlc filezilla flatpak git preload curl qbittorrent nano'
 DEBADM_INSTALL='nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils neofetch speedtest-cli nmap'

@@ -12,8 +12,11 @@
 
 ## **COMO USAR?**
 
-1 - Faça o download do arquivo compactado na página do GitHub ou clone o repositório usando o comando \
-`git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git`
+1 - Faça o download do arquivo compactado na página do GitHub ou clone o repositório usando o comando
+
+```
+git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
+```
 
 2 - Após a conclusão do download, execute o arquivo que estão em **/Ubuntu-Setup/setup-serve.sh** para realizar as instalações e customização no Ubuntu Server e **/Ubuntu-Setup/setup-workstation.sh** para a para realizar as instalações e customização no Ubuntu Desktop.
 
@@ -32,44 +35,18 @@
 
 ***Instalação***
 
-Instalação dos softwares SNAP:
+Softwares SNAP: *Whatsdesk - Walc - Wrapup - MIcrosoft Teams - PDF Mix Tool*
 
-1. PDF Mix Tool
-2. Whatsdesk (WhatsApp)
-3. Walc (WhatsApp)
-4. Wrapup (WhatsApp)
-5. Microsoft Teams
+Softwares .DEB: *htop - vlc - FileZilla - Git - Preload - Curl - qBittorrent - Nano*
 
-Instalação dos softwares .DEB:
-
-1. htop
-2. VLC
-3. FileZilla
-4. Suporte pacotes flatpak
-5. Git
-6. Preload
-7. Curl
-8. qBittorrent
-
-Instalação dos softwares .DEB (Administrador de Redes):
-
-1. Neofetch
-2. SpeedTest-cli
-3. nmap
-4. Nomacs
-5. Synaptic
-6. Open VPN
-7. Gnome Boxes
-8. Remmina
-9. Net-tools
-10. DNS Utils
+Softwares .DEB (Administrador de Redes): *Nomacs - Synaptic - OpenVPN - Gnome-Boxes - Remmina - Net-Tools - DNS Utils - Neofetch - SpeedTest (CLI) - nmap*
 
 ***Customização***
 
-Instala GRUB-Theme para sistemas Dual Boot
+GRUB-Theme (Dual Boot)
 
 ***
 ## **CRÉDITOS**
 
 **Autor**: Fernando da S. Conceição \
-**Contato**: fstecnologia.info@gmail.com
+**Contato**: [GMail](fstecnologia.info@gmail.com)
