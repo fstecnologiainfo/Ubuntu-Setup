@@ -2,7 +2,7 @@
 # Desenvolvido: Fernando da Silva Conceição
 # Data de criação do arquivo: 10/04/2022
 # Ultima Modificação: 17/04/2022
-# Versão: 0.2
+# Versão: 1.1
 #============================================================================================
 
 # IMPORTAÇÃO DOS PARAMETROS e VARIAVEIS GLOBAIS
@@ -10,7 +10,7 @@ source parametros.sh
 HORAINICIAL=$(date +%T)
 LOG_DETAIL=$LOGSCRIPT
 LOG=$LOGSCRIPT2
-VERSAO="0.2"
+VERSAO="1.1"
 #============================================================================================
 #? VERIFICAÇÕES INICIARIS
 echo -e "Verificando se o script já foi executado..."
@@ -33,7 +33,7 @@ clear
 echo "Início do script $0 versão $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" &>> $LOG_DETAIL
 echo "Inicio do script $0 versao $VERSAO em: $(date +%d/%m/%Y-"("%H:%M")")" >> $LOG
 
-echo -e "Verificando se o usuario e Root..." >> $LOG
+echo -e "Verificando se o usuario e Root..."
 if [ "$USUARIO" == "0" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
@@ -47,7 +47,7 @@ if [ "$USUARIO" == "0" ]
         exit 1
 fi
 
-echo -e "Verificando compatibilidade com o sistema operacional..." >> $LOG
+echo -e "Verificando compatibilidade com o sistema operacional..."
 if [ "$UBUNTU" == "20.04" ] || [ "$UBUNTU" == "21.10" ]
 	then
 		echo -e "A versão do sistema operacional é superior a 20.04, continuando com o script..."
@@ -59,7 +59,7 @@ if [ "$UBUNTU" == "20.04" ] || [ "$UBUNTU" == "21.10" ]
 		exit 1
 fi
 
-echo -e "Verificando conexão com internet..." >> $LOG
+echo -e "Verificando conexão com internet..."
 if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "Você tem acesso a Internet, continuando com o script..." >> $LOG
@@ -76,74 +76,88 @@ sleep 5
 #============================================================================================
 #? ATUALIZAÇÃO DO SISTEMA
 HORA_UP=$(date +%T)
-echo -e "Atualizando repositórios....." >> $LOG
+echo -e "Atualizando repositórios..."
+echo "Atualizando repositórios..." >> $LOG
+echo "Atualizando repositórios..." >> $LOG_DETAIL
 if ! sudo apt-get update &>> $LOG_DETAIL
 then
-    echo -e "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list" >> $LOG
+    echo -e "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list"
+    echo "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list" >> $LOG
     exit 1
 fi
-echo -e "Atualização do repositório feita com sucesso!!"  >> $LOG
+echo -e "Atualização do repositório feita com sucesso!!"
 
-echo -e "Atualizando pacotes e sistema....."  >> $LOG
+echo -e "Atualizando pacotes e sistema..."
+echo "Atualizando pacotes e sistema..." >> $LOG
+echo "Atualizando pacotes e sistema..." >> $LOG_DETAIL
 if ! sudo apt-get upgrade --autoremove -y &>> $LOG_DETAIL
 then
-    echo -e "Não foi possível atualizar pacotes."  >> $LOG
+    echo -e "Não foi possível atualizar pacotes."
+    echo "Não foi possível atualizar pacotes." >> $LOG
     exit 1
 fi
-echo -e "Atualização de pacotes feita com sucesso!!"  >> $LOG
-clear
+echo -e "Atualização de pacotes feita com sucesso!!"
 HORA_UPFIM=$(date +%T)
 
 #============================================================================================
 #? INSTALAÇÂO DE SNAPs
 HORA_SNAP=$(date +%T)
-echo -e "Instalando aplicativos snap....."  >> $LOG
+echo -e "Instalando aplicativos snap..."
+echo "Instalando aplicativos snap..." >> $LOG
+echo "Instalando aplicativos snap..." >> $LOG_DETAIL
 if ! sudo apt install snap -y &>> $LOG_DETAIL
 then
+    echo -e "Não foi possível instalar o pacote de snap."
     echo "Não foi possível instalar o pacote de snap." >> $LOG
     exit 1
 fi
-echo -e "Instalação do pacote de snap feita com sucesso!!" >> $LOG
+echo -e "Instalação do pacote de snap feita com sucesso!!"
 sudo snap install whatsdesk walc wrapup teams-for-linux &>> $LOG_DETAIL
 sudo snap install pdfmixtool &>> $LOG_DETAIL
-clear
 HORA_SNAPFIM=$(date +%T)
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB
 HORA_DEB=$(date +%T)
-echo -e "Instalando aplicativos DEB...."  >> $LOG
+echo -e "Instalando aplicativos DEB..."
+echo "Instalando aplicativos DEB..." >> $LOG
+echo "Instalando aplicativos DEB..." >> $LOG_DETAIL
 sudo apt install htop vlc filezilla flatpak git preload curl qbittorrent -y &>> $LOG_DETAIL
-clear
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
-echo -e "Instalando aplicativos DEB administrativos...."  >> $LOG
+echo -e "Instalando aplicativos DEB administrativos..."
+echo "Instalando aplicativos DEB administrativos..." >> $LOG
+echo "Instalando aplicativos DEB administrativos..." >> $LOG_DETAIL
 sudo apt install nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
 sudo apt install neofetch speedtest-cli nmap &>> $LOG_DETAIL
-clear
 HORA_DEBFIM=$(date +%T)
 
 #============================================================================================
 #? CUSTOMIZAÇÃO DO SISTEMA
-echo -e "Adicionando repositórios extras....."  >> $LOG
+echo -e "Iniciando customização do sistema..."
+echo "Iniciando customização do sistema..." >> $LOG
+echo "Iniciando customização do sistema..." >> $LOG_DETAIL
+echo -e "Adicionando repositórios extras..."  >> $LOG
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer &>> $LOG_DETAIL
 sudo apt-get update &>> $LOG_DETAIL
-echo -e "Instalando Grub-Customizer....."  >> $LOG
+echo -e "Instalando Grub-Customizer..."  >> $LOG
 sudo apt-get install grub-customizer -y &>> $LOG_DETAIL
-echo -e "Iniciando costumização do sistema..." >> $LOG
 echo -e "Alterando sistema de data e hora em dual-boot" >> $LOG
+echo -e "Alterando sistema de data e hora em dual-boot" >> $LOG_DETAIL
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_DETAIL
 echo -e "Instalação do Grub Theme...." >> $LOG
+echo -e "Instalação do Grub Theme...." >> $LOG_DETAIL
 cd /conf/Grub-Theme/ &>> $LOG_DETAIL
 if ! sudo bash ./install.sh &>> $LOG_DETAIL
 then
-    echo -e "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório." >> $LOG
+    echo -e "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório."
+    echo "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório." >> $LOG
     sleep 10
-    exit 1
+else
+	echo -e "Grub Theme instalado com sucesso!"
+	sleep 3
 fi
-echo -e "Grub Theme instalado com sucesso!" >> $LOG
-sleep 3
 HORAFINAL=$(date +%T)
 
 #! Verificar se necessário na versão 20.4 superior
@@ -172,7 +186,7 @@ TEMPO=$(date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S")
 echo -e "Tempo gasto para execução do script $0: $TEMPO"
 #============================================================================================
 #? FIM DO PROCESSO E RESTART
-echo -e "Pressione <Enter> para concluir o processo."
+echo -e "Pressione <Enter> para concluir o processo e reiniciar o sistema."
 read
 echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG_DETAIL
 echo "Reiniciando sistema para aplicar atualizações!....." >> $LOG
