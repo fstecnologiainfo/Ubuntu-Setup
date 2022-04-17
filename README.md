@@ -2,6 +2,7 @@
 
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/fstecnologiainfo/Ubuntu-Setup?style=plastic">
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04.
 
