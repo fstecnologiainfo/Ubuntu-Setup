@@ -54,11 +54,13 @@ Softwares .DEB (Administrador de Redes): *Git - Synaptic - OpenVPN - Gnome-Boxes
 
 ***Instalação***
 
-Softwares .DEB (Administrador de Redes): *nmap - SpeedTest (CLI) - Neofetch - Net-Tools - CMatrix - Figlet - qBittorrent*
+Softwares .DEB (Administrador de Redes): *nmap - SpeedTest (CLI) - Neofetch - Net-Tools - CMatrix - Figlet - qBittorrent - OpenSSL*
 
 ***Extra***
 
 ACME: Para gerar certificados com Let's Encrypt
+
+OpenSSL: Para gerar certificados auto-assinados e certificados .pfx
 
 ***
 

@@ -28,4 +28,4 @@ WDEB='htop vlc filezilla flatpak git preload curl qbittorrent nano'
 WDEBADM='nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils neofetch speedtest-cli nmap'
 
 # VARIAVEIS WSL2
-WSL2DEB='nmap speedtest neofetch net-tools matrix figlet qbittorrent'
+WSL2DEB='nmap speedtest neofetch net-tools matrix figlet qbittorrent openssl'
