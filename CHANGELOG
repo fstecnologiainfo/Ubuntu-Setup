@@ -2,7 +2,26 @@
 
 Criador: **Fernando da Silva Conceição**\
 Data de criação do arquivo: **10/04/2022**\
-Ultima Modificação: **17/04/2022**
+Ultima Modificação: **18/04/2022**
+***
+
+## 18/04/2022
+
+Criação
+
+- Adicionando 
+
+arquivo **setup-wsl2.sh** para instalação para Microsoft WSL2
+
+Modificações
+
+arquivo: **parametros.sh**
+
+- Adicionando variáveis para instalações do WSL2
+- Alterando variáveis de instalação de Workstation
+
+arquivo: **README.md**
+
 ***
 
 ## 17/04/2022
@@ -10,12 +29,14 @@ Ultima Modificação: **17/04/2022**
 Modificações
 
 arquivo: **setup-workstation.sh**
-- Corrigindos mensagens no terminal
+
+- Corrigindo mensagens no terminal
 - Ajustando lógica de verificação da versão do sistema operacional
 - Ajustando LOGS
 
 arquivo: **parametros.sh**
-- Alterando saidas de log
+
+- Alterando saídas de log
 
 ***
 
@@ -28,9 +49,11 @@ Criação
 Modificações
 
 arquivo: **parametros.sh**
+
 - Adicionando variáveis Globais para logs, usuário e versionamento do sistema operacional
 
 arquivo: **setup-workstation.sh**
+
 - Adicionando funções de instalação dos software SNAP e DEB
 - Adicionando funções para cálculos de tempo de execução
 - Adicionando funções para customização do sistema
@@ -44,16 +67,20 @@ arquivo: **README.md**
 ## 10/04/2022
 
 Criação
+
 - Criação do arquivo CHANGELOG para informar alterações no projeto
 - Criação do arquivo parametro.sh, setup-server.sh e setup-workstation.sh
 - Criação da pasta conf para armazenar arquivos de configurações e personalizações dos programas
 
 Modificações
+
 - Personalização do arquivo *\conf\neofetch\config.conf
 - Personalização do Arquivo *\conf\ssh\banner.net
 
 ***
 
 ## 15/03/2022
+
 Criação
-- Criação do Projeto e arquivos padrões do GIT
+
+- Criação do projeto e arquivos padrões do GIT

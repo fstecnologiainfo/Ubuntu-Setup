@@ -3,7 +3,7 @@
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
- Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04.
+ Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04, incluído WSL2 da Microsoft.
 
 >**IMPORTANTE**\
 >Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em /var/log/ \
@@ -39,15 +39,26 @@ Em desenvolvimento
 
 Softwares SNAP: *Whatsdesk - Walc - Wrapup - MIcrosoft Teams - PDF Mix Tool*
 
-Softwares .DEB: *htop - vlc - FileZilla - Git - Preload - Curl - qBittorrent - Nano*
+Softwares .DEB: *htop - vlc - FileZilla - Preload - Curl - qBittorrent - Nano - Nomacs*
 
-Softwares .DEB (Administrador de Redes): *Nomacs - Synaptic - OpenVPN - Gnome-Boxes - Remmina - Net-Tools - DNS Utils - Neofetch - SpeedTest (CLI) - nmap*
+Softwares .DEB (Administrador de Redes): *Git - Synaptic - OpenVPN - Gnome-Boxes - Remmina - Net-Tools - DNS Utils - Neofetch - SpeedTest (CLI) - nmap*
 
 ***Customização***
 
 - Ajuste de data e hora para dual boot e VM's
 
 - GRUB-Theme (Dual Boot)
+***
+
+## **MICROSOFT WSL2**
+
+***Instalação***
+
+Softwares .DEB (Administrador de Redes): *nmap - SpeedTest (CLI) - Neofetch - Net-Tools - CMatrix - Figlet - qBittorrent*
+
+***Extra***
+
+ACME: Para gerar certificados com Let's Encrypt
 
 ***
 
