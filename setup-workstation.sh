@@ -122,14 +122,16 @@ HORA_DEB=$(date +%T)
 echo -e "Instalando aplicativos DEB..."
 echo "Instalando aplicativos DEB..." >> $LOG
 echo "Instalando aplicativos DEB..." >> $LOG_DETAIL
-sudo apt install htop vlc filezilla flatpak git preload curl qbittorrent -y &>> $LOG_DETAIL
+sudo apt install htop vlc nomacs filezilla flatpak preload curl qbittorrent -y &>> $LOG_DETAIL
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
+#! Problema com prompt que para a instalação
+#TODO -> Verificar comando que force a instalação sem interação do usuário
 echo -e "Instalando aplicativos DEB administrativos..."
 echo "Instalando aplicativos DEB administrativos..." >> $LOG
 echo "Instalando aplicativos DEB administrativos..." >> $LOG_DETAIL
-sudo apt install nomacs synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
+sudo apt install git synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
 sudo apt install neofetch speedtest-cli nmap &>> $LOG_DETAIL
 HORA_DEBFIM=$(date +%T)
 
