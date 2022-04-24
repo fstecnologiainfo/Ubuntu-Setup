@@ -2,14 +2,32 @@
 
 Criador: **Fernando da Silva Conceição**\
 Data de criação do arquivo: **10/04/2022**\
-Ultima Modificação: **18/04/2022**
+Ultima Modificação: **24/04/2022**
+***
+
+## 24/04/2022
+
+Modificações
+
+arquivo: **README.md**
+
+arquivo: **setup-workstation.sh**
+
+- Melhoria no arquivo de Log detalhado
+- Removendo instalação do GRUB-THEME
+
+arquivo: **parametros.sh**
+
+- Adicionando funções para impressão de Banner de identificação de execução do script
+- Alterando programas SNAP a serem instalados
+
 ***
 
 ## 18/04/2022
 
 Criação
 
-- Adicionando 
+- Adicionando
 
 arquivo **setup-wsl2.sh** para instalação para Microsoft WSL2
 

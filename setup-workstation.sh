@@ -1,21 +1,42 @@
 #!/bin/bash
 # Desenvolvido: Fernando da Silva Conceição
 # Data de criação do arquivo: 10/04/2022
-# Ultima Modificação: 17/04/2022
-# Versão: 1.1
+# Ultima Modificação: 24/04/2022
+# Versão: 1.2
 #============================================================================================
 
 # IMPORTAÇÃO DOS PARAMETROS e VARIAVEIS GLOBAIS
 source parametros.sh
-HORAINICIAL=$(date +%T)
 LOG_DETAIL=$LOGSCRIPT
 LOG=$LOGSCRIPT2
-VERSAO="1.1"
+LOCAL=$(pwd)
+VERSAO="1.2"
+#============================================================================================
+#? APRESENTACAO DO SCRIPT
+bannerDesk()
+echo -e "Versão do Script: $VERSAO"
+echo -e ""
+
 #============================================================================================
 #? VERIFICAÇÕES INICIARIS
 echo -e "Verificando se o script já foi executado..."
 if [ -f $LOG ]
 	then
+		else
+		# populando LOG com informações do script e execução
+		echo "Data de Execução: $(date)" >> $LOG_DETAIL
+		echo "Local de Execução: $LOCAL" >> $LOG_DETAIL
+		echo "Usuario: $(whoami) " >> $LOG_DETAIL
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Versão do Script: $VERSAO" >> $LOG_DETAIL
+		echo "======================================================" >> $LOG_DETAIL
+
+		echo "Data de Execução: $(date)" >> $LOG
+		echo "Local de Execução: $LOCAL" >> $LOG
+		echo "Usuario: $(whoami) " >> $LOG
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Versão do Script: $VERSAO" >> $LOG
+		echo "======================================================" >> $LOG
 		echo -e "Script $0 já foi executado 1 (uma) vez nesse computador..."
 		echo -e "É recomendado analisar o arquivo de $LOG e $LOG_DETAIL para informações de falhas ou erros"
 		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
@@ -24,6 +45,20 @@ if [ -f $LOG ]
 		sleep 5
 		exit 1
 	else
+		# populando LOG com informações do script e execução
+		echo "Data de Execução: $(date)" >> $LOG_DETAIL
+		echo "Local de Execução: $LOCAL" >> $LOG_DETAIL
+		echo "Usuario: $(whoami) " >> $LOG_DETAIL
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Versão do Script: $VERSAO" >> $LOG_DETAIL
+		echo "======================================================" >> $LOG_DETAIL
+
+		echo "Data de Execução: $(date)" >> $LOG
+		echo "Local de Execução: $LOCAL" >> $LOG
+		echo "Usuario: $(whoami) " >> $LOG
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Versão do Script: $VERSAO" >> $LOG
+		echo "======================================================" >> $LOG
 		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
 		echo "Passou pela checagem de execução unica." >> $LOG
 		sleep 5
@@ -74,7 +109,15 @@ echo "Passou pelas verificações iniciais!" &>> $LOG_DETAIL
 sleep 5
 
 #============================================================================================
+#? AJUSTES DO SISTEMA
+echo -e "Iniciando customização e ajustes do sistema..."
+echo "Alterando sistema de data e hora..." >> $LOG
+echo "Alterando sistema de data e hora..." >> $LOG_DETAIL
+timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_DETAIL
+
+#============================================================================================
 #? ATUALIZAÇÃO DO SISTEMA
+HORAINICIAL=$(date +%T)
 HORA_UP=$(date +%T)
 echo -e "Atualizando repositórios..."
 echo "Atualizando repositórios..." >> $LOG
@@ -101,6 +144,7 @@ HORA_UPFIM=$(date +%T)
 
 #============================================================================================
 #? INSTALAÇÂO DE SNAPs
+#TODO Testar o uso da variavel de instalação
 HORA_SNAP=$(date +%T)
 echo -e "Instalando aplicativos snap..."
 echo "Instalando aplicativos snap..." >> $LOG
@@ -113,58 +157,29 @@ then
 fi
 echo -e "Instalação do pacote de snap feita com sucesso!!"
 sudo snap install whatsdesk walc wrapup teams-for-linux &>> $LOG_DETAIL
-sudo snap install pdfmixtool &>> $LOG_DETAIL
 HORA_SNAPFIM=$(date +%T)
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB
+#TODO Testar a não interação do usuário
+#TODO Testar o uso da variavel de instalação
+#TODO Criar condição de IF ! para instalação dos softwares
 HORA_DEB=$(date +%T)
 echo -e "Instalando aplicativos DEB..."
 echo "Instalando aplicativos DEB..." >> $LOG
 echo "Instalando aplicativos DEB..." >> $LOG_DETAIL
-sudo apt install htop vlc nomacs filezilla flatpak preload curl qbittorrent -y &>> $LOG_DETAIL
+sudo DEBIAN_FRONTEND=noninteractive apt install htop vlc nomacs filezilla flatpak preload curl qbittorrent -y &>> $LOG_DETAIL
 
 #============================================================================================
 #? INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
-#! Problema com prompt que para a instalação
-#TODO -> Verificar comando que force a instalação sem interação do usuário
 echo -e "Instalando aplicativos DEB administrativos..."
 echo "Instalando aplicativos DEB administrativos..." >> $LOG
 echo "Instalando aplicativos DEB administrativos..." >> $LOG_DETAIL
-sudo apt install git synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
-sudo apt install neofetch speedtest-cli nmap &>> $LOG_DETAIL
+sudo apt DEBIAN_FRONTEND=noninteractive install git synaptic openvpn gnome-boxes remmina net-tools dnsutils -y &>> $LOG_DETAIL
 HORA_DEBFIM=$(date +%T)
 
-#============================================================================================
-#? CUSTOMIZAÇÃO DO SISTEMA
-echo -e "Iniciando customização do sistema..."
-echo "Iniciando customização do sistema..." >> $LOG
-echo "Iniciando customização do sistema..." >> $LOG_DETAIL
-echo -e "Adicionando repositórios extras..."  >> $LOG
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer &>> $LOG_DETAIL
-sudo apt-get update &>> $LOG_DETAIL
-echo -e "Instalando Grub-Customizer..."  >> $LOG
-sudo apt-get install grub-customizer -y &>> $LOG_DETAIL
-echo -e "Alterando sistema de data e hora em dual-boot" >> $LOG
-echo -e "Alterando sistema de data e hora em dual-boot" >> $LOG_DETAIL
-timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_DETAIL
-echo -e "Instalação do Grub Theme...." >> $LOG
-echo -e "Instalação do Grub Theme...." >> $LOG_DETAIL
-cd /conf/Grub-Theme/ &>> $LOG_DETAIL
-if ! sudo bash ./install.sh &>> $LOG_DETAIL
-then
-    echo -e "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório."
-    echo "Não foi possível instalar o Grub Theme. Verificar permissões do arquivo, ou se o mesmo se encontra no diretório." >> $LOG
-    sleep 10
-else
-	echo -e "Grub Theme instalado com sucesso!"
-	sleep 3
-fi
 HORAFINAL=$(date +%T)
 
-#! Verificar se necessário na versão 20.4 superior
-#! echo "Implementando minimizar app para dock com duplo clique....."
-#! gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 #============================================================================================
 #? CALCULOS DOS TEMPOS GASTOS DE EXECUÇÃO
 HORAUP01=$(date -u -d "$HORA_UP" +"%s")

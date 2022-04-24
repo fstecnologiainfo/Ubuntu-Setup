@@ -2,8 +2,7 @@
 
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub followers](https://img.shields.io/github/followers/fstecnologiainfo?style=social)
-![GitHub forks](https://img.shields.io/github/forks/fstecnologiainfo/Ubuntu-Setup?style=social)
+
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04, incluído WSL2 da Microsoft.
 
@@ -39,24 +38,24 @@ Em desenvolvimento
 
 ***Instalação***
 
-Softwares SNAP: *Whatsdesk - Walc - Wrapup - MIcrosoft Teams - PDF Mix Tool*
+Softwares SNAP: *Whatsdesk - MIcrosoft Teams - PDF Mix Tool*
 
-Softwares .DEB: *htop - vlc - FileZilla - Preload - Curl - qBittorrent - Nano - Nomacs*
+Softwares .DEB: *htop - VLC - FileZilla - Flatpak - Git - Preload - Curl - qBittorrent - Nano - Grub Customizer - Nomacs*
 
-Softwares .DEB (Administrador de Redes): *Git - Synaptic - OpenVPN - Gnome-Boxes - Remmina - Net-Tools - DNS Utils - Neofetch - SpeedTest (CLI) - nmap*
+Softwares .DEB (Administrador de Redes): *Synaptic Open VPN - Gnome Boxes - Remmina - Net-tools - DNS Utils - Neofetch - SpeedTest (cli) - NMap - Open SSL*
 
 ***Customização***
 
 - Ajuste de data e hora para dual boot e VM's
+- Codecs para execução de arquivos de media
 
-- GRUB-Theme (Dual Boot)
 ***
 
 ## **MICROSOFT WSL2**
 
 ***Instalação***
 
-Softwares .DEB (Administrador de Redes): *nmap - SpeedTest (CLI) - Neofetch - Net-Tools - CMatrix - Figlet - qBittorrent - OpenSSL*
+Softwares .DEB (Administrador de Redes): *NMap - SpeedTest (cli) - Neofetch - Net-tools - cMatrix - Figlet - Open SSL - DNS  Utils*
 
 ***Extra***
 
