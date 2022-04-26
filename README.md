@@ -23,7 +23,7 @@ git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
 
 PowerShell
 ```
-Invoke-WebRequest -Uri https://codeload.github.com/fstecnologiainfo/Ubuntu-Setup/zip/refs/heads/main -OutFile C:\Temp\Ubuntu-Setup.zip
+Invoke-WebRequest -Uri https://codeload.github.com/fstecnologiainfo/Ubuntu-Setup/zip/refs/heads/main -OutFile C:\Ubuntu-Setup.zip
 ```
 
 2 - Acesse a pasta /Ubuntu-Setup e altere as permissões dos arquivos *setup-serve.sh*, *setup-workstation.sh* e *parametros.sh* em arquivos executáveis.
