@@ -1,8 +1,8 @@
 # **Ubuntu-Setup**
 
-![Shell](https://img.shields.io/static/v1?label=Shell%20Script&message=Linux&color=red)
+![Shell](https://img.shields.io/static/v1?label=Shell%20Script&logo=Ubuntu&message=Linux&color=orange)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+![GitHub repo size](https://img.shields.io/github/repo-size/fstecnologiainfo/Ubuntu-Setup)
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04, incluído WSL2 da Microsoft.
 
@@ -16,8 +16,14 @@
 
 1 - Faça o download do arquivo compactado na página do GitHub ou clone o repositório usando o comando
 
+Git
 ```
 git clone https://github.com/fstecnologiainfo/Ubuntu-Setup.git
+```
+
+PowerShell
+```
+Invoke-WebRequest -Uri https://codeload.github.com/fstecnologiainfo/Ubuntu-Setup/zip/refs/heads/main -OutFile C:\Temp\Ubuntu-Setup.zip
 ```
 
 2 - Acesse a pasta /Ubuntu-Setup e altere as permissões dos arquivos *setup-serve.sh*, *setup-workstation.sh* e *parametros.sh* em arquivos executáveis.
