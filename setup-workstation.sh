@@ -69,7 +69,7 @@ if [ -f $LOG ]
 		echo "Data de Execução: $(date)" >> $LOGD
 		echo "Local de Execução: $LOCAL" >> $LOGD
 		echo "Usuario: $(whoami) " >> $LOGD
-		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> LOGD
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> $LOGD
 		echo "Versão do Script: $VERSAO" >> $LOGD
 		echo "======================================================" >> $LOGD
 
