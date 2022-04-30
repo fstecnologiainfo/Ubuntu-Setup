@@ -5,7 +5,7 @@
 # Versão: 1.3
 #TODO Testar a não interação do usuário
 #TODO Implementar os FLAGS para instalação
-#TODO Mudar echo com saidas para log para que sejam exibidas no terminal
+#TODO Testar echo com saidas para log para que sejam exibidas no terminal
 #============================================================================================
 #* VARIAVEIS GLOBAIS
 LOGD="/var/log/$(echo $0 | cut -d'/' -f2)-DETALHADO.log"
