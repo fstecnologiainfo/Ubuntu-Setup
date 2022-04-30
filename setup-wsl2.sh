@@ -3,6 +3,8 @@
 # Data de criação do arquivo: 18/04/2022
 # Ultima Modificação: 30/04/2022
 # Versão: 0.2
+#TODO Implementar os FLAGS para instalação
+#TODO Mudar echos com saidas para log para que sejam exibidas no terminal
 #============================================================================================
 #* VARIAVEIS GLOBAIS
 HORAINICIAL=$(date +%T)
@@ -74,11 +76,11 @@ if [ -f $LOG ]
 		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> $LOG
 		echo "Versão do Script: $VERSAO" >> $LOG
 		echo "======================================================" >> $LOG
-		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		echo -e "Primeira vez que você está executando esse script, tudo OK!"
+		echo -e "Agora tome um café e espere a magica acontecer..."
 		echo "Passou pela checagem de execução unica." >> $LOG
 		sleep 5
 fi
-clear
 
 echo -e "Verificando compatibilidade com o sistema operacional..."
 if [ "$(lsb_release -rs)" == "21.10" ] || [ "$(lsb_release -rs)" == "22.04" ]

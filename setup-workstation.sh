@@ -4,8 +4,8 @@
 # Ultima Modificação: 30/04/2022
 # Versão: 1.3
 #TODO Testar a não interação do usuário
-#TODO Testar o uso da variavel de instalação
 #TODO Implementar os FLAGS para instalação
+#TODO Mudar echo com saidas para log para que sejam exibidas no terminal
 #============================================================================================
 #* VARIAVEIS GLOBAIS
 LOGD="/var/log/$(echo $0 | cut -d'/' -f2)-DETALHADO.log"
@@ -13,7 +13,7 @@ LOG="/var/log/$(echo $0 | cut -d'/' -f2)-RESUMIDO.log"
 LOCAL=$(pwd)
 VERSAO="1.3"
 WSNAP='whatsdesk teams-for-linux pdfmixtool'
-WDEB='htop vlc filezilla flatpak git preload curl qbittorrent nano grub-customizer nomacs ubuntu-restricted-extras'
+WDEB='htop vlc filezilla flatpak git preload curl qbittorrent nano nomacs ubuntu-restricted-extras'
 WDEBADM='synaptic openvpn gnome-boxes remmina net-tools dnsutils neofetch speedtest-cli nmap openssl'
 #============================================================================================
 #* APRESENTACAO DO SCRIPT
@@ -79,11 +79,11 @@ if [ -f $LOG ]
 		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> $LOG
 		echo "Versão do Script: $VERSAO" >> $LOG
 		echo "======================================================" >> $LOG
-		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		echo -e "Primeira vez que você está executando esse script, tudo OK!"
+		echo -e "Agora tome um café e espere a magica acontecer..."
 		echo "Passou pela checagem de execução unica." >> $LOG
 		sleep 5
 fi
-clear
 
 echo -e "Verificando compatibilidade com o sistema operacional..."
 if [ "$(lsb_release -rs)" == "21.10" ] || [ "$(lsb_release -rs)" == "22.04" ]
@@ -183,7 +183,7 @@ echo -e "Instalação dos pacotes DEB finalizados com sucesso!!"
 #* INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
 echo -e "Instalando aplicativos DEB administrativos..." >> $LOG
 echo "Instalando aplicativos DEB administrativos..." >> $LOGD
-if ! sudo apt DEBIAN_FRONTEND=noninteractive install $WDEBADM -y &>> $LOGD
+if ! sudo DEBIAN_FRONTEND=noninteractive apt install $WDEBADM -y &>> $LOGD
 then
 	echo -e "Não foi possivel instalar todos os pacotes .DEB admnistrativos." >> $LOG
 	echo -e "Verifique o LOG em $LOGD para maires detalhes.."

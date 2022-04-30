@@ -47,7 +47,7 @@ Em desenvolvimento
 
 Softwares SNAP: *Whatsdesk - MIcrosoft Teams - PDF Mix Tool*
 
-Softwares .DEB: *htop - VLC - FileZilla - Flatpak - Git - Preload - Curl - qBittorrent - Nano - Grub Customizer - Nomacs*
+Softwares .DEB: *htop - VLC - FileZilla - Flatpak - Git - Preload - Curl - qBittorrent - Nano - Nomacs*
 
 Softwares .DEB (Administrador de Redes): *Synaptic Open VPN - Gnome Boxes - Remmina - Net-tools - DNS Utils - Neofetch - SpeedTest (cli) - NMap - Open SSL*
 
