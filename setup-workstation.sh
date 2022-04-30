@@ -100,10 +100,11 @@ fi
 echo -e "Verificando conexão com internet..."
 if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "Você tem acesso a Internet, continuando com o script..." >> $LOG
+		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4 e conexões e execute novamente este script." >> $LOG
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4 e conexões e execute novamente este script."
+		echo "Não passou pela checagem de conxão com a internet." >> $LOG
 		sleep 5
 		exit 1
 fi
@@ -113,7 +114,7 @@ sleep 5
 
 #============================================================================================
 #* AJUSTES DO SISTEMA
-echo -e "Iniciando customização e ajustes do sistema..." >> $LOG
+echo -e "Iniciando customização e ajustes do sistema..."
 echo "Alterando sistema de data e hora..." >> $LOGD
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOGD
 
@@ -121,7 +122,8 @@ timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOGD
 #* ATUALIZAÇÃO DO SISTEMA
 HORAINICIAL=$(date +%T)
 HORA_UP=$(date +%T)
-echo -e "Atualizando repositórios..." >> $LOG
+echo -e "Atualizando repositórios..."
+echo "Atualizando repositórios..." >> $LOG
 echo "Atualizando repositórios..." >> $LOGD
 if ! sudo apt-get update &>> $LOGD
 then
@@ -131,7 +133,8 @@ then
 fi
 echo -e "Atualização do repositório feita com sucesso!!"
 
-echo -e "Atualizando pacotes e sistema..." >> $LOG
+echo -e "Atualizando pacotes e sistema..."
+echo "Atualizando pacotes e sistema..." >> $LOG
 echo "Atualizando pacotes e sistema..." >> $LOGD
 if ! sudo apt-get upgrade --autoremove -y &>> $LOGD
 then
@@ -145,19 +148,25 @@ HORA_UPFIM=$(date +%T)
 #============================================================================================
 #* INSTALAÇÂO DE SNAPs
 HORA_SNAP=$(date +%T)
-echo -e "Instalando suporte a SNAP e aplicativos SNAP..." >> $LOG
-echo "Instalando aplicativos snap..." >> $LOGD
+echo -e "Instalando suporte a SNAP e aplicativos SNAP..."
+echo "Instalando suporte a SNAP e aplicativos SNAP..." >> $LOG
+echo "Instalando suporte a SNAP..." >> $LOGD
 if ! sudo apt install snap -y &>> $LOGD
 then
-    echo -e "Não foi possível instalar o suporte a snap." >> $LOG
+    echo -e "Não foi possível instalar o suporte a snap."
+    echo "Não foi possível instalar o suporte a snap." >> $LOG
 	echo -e "Verifique o LOG em $LOGD para maires detalhes.."
     exit 1
 fi
 echo -e "Instalação do suporte a SNAP feita com sucesso!!"
 
+echo -e "Instalando softwares SNAPs..."
+echo "Instalando softwares SNAPs..." >> $LOG
+echo "Instalando softwares SNAPs..." >> $LOGD
 if ! sudo snap install $WSNAP &>> $LOGD
 then
-	echo -e "Não foi possivel realizar a instalação dos aplicativos SNAP." >> $LOG
+	echo -e "Não foi possivel realizar a instalação dos aplicativos SNAP."
+	echo "Não foi possivel realizar a instalação dos aplicativos SNAP." >> $LOG
 	echo -e "Verifique o LOG em $LOGD para maires detalhes.."
 	exit 1
 fi
@@ -167,27 +176,28 @@ HORA_SNAPFIM=$(date +%T)
 #============================================================================================
 #* INSTALAÇÂO DE SOFTWARES .DEB
 HORA_DEB=$(date +%T)
-echo -e "Instalando aplicativos DEB..." >> $LOG
+echo -e "Instalando aplicativos DEB..."
+echo "Instalando aplicativos DEB..." >> $LOG
 echo "Instalando aplicativos DEB..." >> $LOGD
 if ! sudo DEBIAN_FRONTEND=noninteractive apt install $WDEB -y &>> $LOGD
 then
-	echo -e "Não foi possivel instalar todos os pacotes DEB." >> $LOG
+	echo -e "Não foi possivel instalar todos os pacotes DEB."
+	echo "Não foi possivel instalar todos os pacotes DEB." >> $LOG
 	echo -e "Verifique o LOG em $LOGD para maiores detalhes.."
-	echo "Não foi possivel instalar todos os pacotes DEB." >> $LOGD
 	exit 1
 fi
 echo -e "Instalação dos pacotes DEB finalizados com sucesso!!"
 
-
 #============================================================================================
 #* INSTALAÇÂO DE SOFTWARES .DEB ADMINISTRATIVOS
-echo -e "Instalando aplicativos DEB administrativos..." >> $LOG
+echo -e "Instalando aplicativos DEB administrativos..."
+echo "Instalando aplicativos DEB administrativos..." >> $LOG
 echo "Instalando aplicativos DEB administrativos..." >> $LOGD
 if ! sudo DEBIAN_FRONTEND=noninteractive apt install $WDEBADM -y &>> $LOGD
 then
-	echo -e "Não foi possivel instalar todos os pacotes .DEB admnistrativos." >> $LOG
+	echo -e "Não foi possivel instalar todos os pacotes .DEB admnistrativos."
+	echo "Não foi possivel instalar todos os pacotes .DEB admnistrativos." >> $LOG
 	echo -e "Verifique o LOG em $LOGD para maires detalhes.."
-	echo "Não foi possivel instalar todos os pacotes .DEB admnistrativos." >> $LOGD
 	exit 1
 fi
 echo -e "Instalação dos pacotes administrativos concuida com sucesso!!"
