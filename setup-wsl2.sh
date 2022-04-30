@@ -64,14 +64,14 @@ if [ -f $LOG ]
 		echo "Data de Execução: $(date)" >> $LOGD
 		echo "Local de Execução: $LOCAL" >> $LOGD
 		echo "Usuario: $(whoami) " >> $LOGD
-		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> $LOGD
 		echo "Versão do Script: $VERSAO" >> $LOGD
 		echo "======================================================" >> $LOGD
 
 		echo "Data de Execução: $(date)" >> $LOG
 		echo "Local de Execução: $LOCAL" >> $LOG
 		echo "Usuario: $(whoami) " >> $LOG
-		echo "Script executado: $(echo $0 | cut -d'/' -f2)"
+		echo "Script executado: $(echo $0 | cut -d'/' -f2)" >> $LOG
 		echo "Versão do Script: $VERSAO" >> $LOG
 		echo "======================================================" >> $LOG
 		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
