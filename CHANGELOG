@@ -2,7 +2,34 @@
 
 Criador: **Fernando da Silva Conceição**\
 Data de criação do arquivo: **10/04/2022**\
-Ultima Modificação: **26/04/2022**
+Ultima Modificação: **30/04/2022**
+***
+
+## 30/04/2022
+
+Modificações
+
+arquivo: **README.md**
+
+arquivo: **setup-workstation.sh**
+
+- otimizando códigos e saídas dos logs
+- verificações se as instalações de SNAP e DEB funcionam corretamente
+- mudando condição de verificação do usuário root
+- ajustando formatação do código
+
+arquivo: **setup-workstation.sh**
+
+- mudando condição de verificação iniciais
+- realizando ajuste de LOG
+- ajustando formatação do código
+
+arquivo: **setup-server.sh**
+
+Exclusão
+
+arquivo: **parametros.sh**
+
 ***
 
 ## 26/04/2022
@@ -18,8 +45,6 @@ arquivo: **/ssh/banner.net**
 ## 24/04/2022
 
 Modificações
-
-
 
 arquivo: **setup-workstation.sh**
 

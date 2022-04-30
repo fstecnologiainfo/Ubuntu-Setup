@@ -1,14 +1,15 @@
 # **Ubuntu-Setup**
 
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&logo=Ubuntu&message=Linux&color=orange)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub](https://img.shields.io/github/license/fstecnologiainfo/Ubuntu-Setup)
+![GitHub repo size](https://img.shields.io/github/repo-size/fstecnologiainfo/Ubuntu-Setup)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fstecnologiainfo/Ubuntu-Setup)
 
- Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 20.04, incluído WSL2 da Microsoft.
+ Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 21.10, incluído distros instaladas no Microsoft WSL2.
 
 >**IMPORTANTE**\
->Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em /var/log/ \
->Caso queira realizar modificação nos programas que serão instalados, altere o arquivo parametros.sh
+>Esses scripts são programados para executar apenas 1 vez, caso haja algum erro verifique os arquivos de log em **/var/log/** \
+>Caso queira realizar modificação nos programas que serão instalados, modifique a sessão de **VARIAVEIS GLOBAIS**
 
 ***
 
@@ -26,9 +27,9 @@ PowerShell
 Invoke-WebRequest -Uri https://codeload.github.com/fstecnologiainfo/Ubuntu-Setup/zip/refs/heads/main -OutFile C:\Ubuntu-Setup.zip
 ```
 
-2 - Acesse a pasta /Ubuntu-Setup e altere as permissões dos arquivos *setup-serve.sh*, *setup-workstation.sh* e *parametros.sh* em arquivos executáveis.
+2 - Acesse a pasta **/Ubuntu-Setup** e altere as permissões do arquivos *setup-(tipo-distro).sh* em arquivos executáveis.
 
-3 - Execute a instalação com os privilégios *root*, sendo **/Ubuntu-Setup/setup-serve.sh** para realizar as instalações e customização no Ubuntu Server e **/Ubuntu-Setup/setup-workstation.sh** para a para realizar as instalações e customização no Ubuntu Desktop e **/Ubuntu-Setup/setup-wsl2.sh**.
+3 - Execute a instalação com os privilégios *root*, sendo **/Ubuntu-Setup/setup-serve.sh** para realizar as instalações e customização no Ubuntu Server, **/Ubuntu-Setup/setup-workstation.sh** para realizar as instalações e customização no Ubuntu Desktop e **/Ubuntu-Setup/setup-wsl2.sh** para realizar as instalações e customização no Microsoft WSL2 Ubuntu.
 
 ***
 
