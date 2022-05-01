@@ -2,8 +2,8 @@
 
 ![Shell](https://img.shields.io/static/v1?label=Shell%20Script&logo=Ubuntu&message=Linux&color=orange)
 ![GitHub](https://img.shields.io/github/license/fstecnologiainfo/Ubuntu-Setup)
+![GitHub top language](https://img.shields.io/github/languages/top/fstecnologiainfo/Ubuntu-Setup?logo=Linux&logoColor=white)
 ![GitHub repo size](https://img.shields.io/github/repo-size/fstecnologiainfo/Ubuntu-Setup)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fstecnologiainfo/Ubuntu-Setup)
 
  Script para realizar instalações e customização do Ubuntu Server e Desktop com versões superior a 21.10, incluído distros instaladas no Microsoft WSL2.
 
